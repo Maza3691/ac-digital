@@ -166,7 +166,7 @@ a { color: inherit; }
 .svc:is(:hover, :focus-visible, .play) .w2 { animation-delay: .2s; }
 .svc:is(:hover, :focus-visible, .play) .cog { animation: turn 1.6s linear infinite; }
 .svc:is(:hover, :focus-visible, .play) .st { animation: pop .55s var(--ease-out); fill: currentColor; }
-.svc:is(:hover, :focus-visible, .play) .flap { animation: flap .7s var(--ease-out); transform-origin: center top; }
+.svc:is(:hover, :focus-visible, .play) .flap { animation: flap .7s var(--ease-out); transform-box: fill-box; transform-origin: center top; }
 .svc:is(:hover, :focus-visible, .play) .tl { animation: tile-in .45s var(--ease-out) both; }
 .svc:is(:hover, :focus-visible, .play) .t2 { animation-delay: .08s; }
 .svc:is(:hover, :focus-visible, .play) .t3 { animation-delay: .16s; }
@@ -298,7 +298,7 @@ a { color: inherit; }
 .band.is-live .star:nth-child(4) { animation-delay: .36s; }
 .band.is-live .star:nth-child(5) { animation-delay: .48s; }
 .band.is-live .pin { animation: hop 2.4s var(--ease-out) infinite; }
-.band.is-live .flap { animation: flap 2.4s var(--ease-out) infinite; transform-origin: center top; }
+.band.is-live .flap { animation: flap 2.4s var(--ease-out) infinite; transform-box: fill-box; transform-origin: center top; }
 .band.is-live .at { animation: hop 2.4s .3s var(--ease-out) infinite; }
 .motion .band__art .tile, .motion .band__art .grow { transform: scale(0); }
 .band.is-live .tile { animation: tile-in .45s var(--ease-out) forwards; }
