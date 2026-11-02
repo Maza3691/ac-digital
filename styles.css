@@ -290,9 +290,6 @@ a { color: inherit; }
 .band.is-live .step2 { animation-delay: .6s; }
 .band.is-live .step3 { animation-delay: 1.2s; }
 .band.is-live .tick { animation: draw .5s 1.4s var(--ease-out) forwards; }
-.hand { transform-box: view-box; transform-origin: 200px 62px; }
-/* minute hand ticks round in 12 clean steps; the hour hand stays put */
-.band.is-live .hand--min { animation: turn 6s steps(12, end) infinite; }
 .band.is-live .ph { animation: rise .6s var(--ease-out) forwards; }
 .band.is-live .ph:nth-of-type(n+3) { animation-delay: .15s; }
 .band.is-live .star { animation: pop .6s var(--ease-out) both; }
