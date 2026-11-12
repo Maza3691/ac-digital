@@ -369,10 +369,11 @@
     <a class="btn btn--outline" href="tel:+447797759598">07797 759598</a>
   </div>
 
-  <form class="cta__form" action="https://formsubmit.co/ac.digital03@gmail.com" method="POST">
-    <input type="hidden" name="_subject" value="New enquiry from the AC Digital website">
-    <input type="hidden" name="_template" value="table">
-    <input type="text" name="_honey" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <form class="cta__form" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="268b3a6d-0a2f-4f24-a181-83d445fd5f94">
+    <input type="hidden" name="subject" value="New enquiry from the AC Digital website">
+    <input type="hidden" name="from_name" value="AC Digital website">
+    <input type="checkbox" name="botcheck" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
     <p class="cta__form-title">Or send us your details</p>
     <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
     <div class="field"><label for="f-business">Business</label><input id="f-business" name="business" type="text" autocomplete="organization"></div>
@@ -413,6 +414,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="main.js?v=35"></script>
+<script src="main.js?v=36"></script>
 </body>
 </html>

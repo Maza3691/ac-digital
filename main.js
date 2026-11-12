@@ -25,7 +25,7 @@
       if (!form.checkValidity()) { form.reportValidity(); return; }
       sendBtn.disabled = true; sendBtn.textContent = 'Sending…';
       status.className = 'cta__form-status field--wide'; status.textContent = '';
-      fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+      fetch(form.action, {
         method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form)
       }).then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
         .then(function (res) {
