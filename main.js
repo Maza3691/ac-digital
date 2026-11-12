@@ -15,6 +15,34 @@
   }
   tick(); setInterval(tick, 15000);
 
+  /* ---------- contact form: sends without leaving the page ---------- */
+  var form = document.querySelector('.cta__form');
+  if (form && window.fetch && window.FormData) {
+    var status = form.querySelector('.cta__form-status');
+    var sendBtn = form.querySelector('button[type="submit"]');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      sendBtn.disabled = true; sendBtn.textContent = 'Sending…';
+      status.className = 'cta__form-status field--wide'; status.textContent = '';
+      fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+        method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form)
+      }).then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+        .then(function (res) {
+          if (!res.ok || String(res.d.success) !== 'true') throw new Error(res.d.message || 'Failed');
+          form.reset();
+          status.classList.add('is-ok');
+          status.textContent = 'Thanks, your message has been sent. We’ll get back to you within one working day.';
+          sendBtn.textContent = 'Sent';
+        })
+        .catch(function () {
+          status.classList.add('is-error');
+          status.innerHTML = 'Sorry, that didn’t send. Please email <a href="mailto:ac.digital03@gmail.com">ac.digital03@gmail.com</a> or call <a href="tel:+447797759598">07797 759598</a>.';
+          sendBtn.disabled = false; sendBtn.textContent = 'Send message';
+        });
+    });
+  }
+
   /* ---------- top bar: solid on scroll, progress, where-you-are marker, services panel, phone menu ---------- */
   var navEl = document.getElementById('nav');
   var progress = navEl.querySelector('.nav__progress');

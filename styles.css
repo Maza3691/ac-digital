@@ -388,6 +388,11 @@ a { color: inherit; }
 .field textarea { resize: vertical; min-height: 120px; }
 .field input:focus, .field textarea:focus { outline: none; border-color: var(--navy); }
 .cta__form .btn { justify-self: center; min-width: 220px; }
+.cta__form .btn:disabled { opacity: .7; cursor: default; }
+.cta__form-status { text-align: center; font-weight: 400; min-height: 1.5em; }
+.cta__form-status:empty { display: none; }
+.cta__form-status.is-ok { font-weight: 800; }
+.cta__form-status a { text-decoration: underline; }
 @media (max-width: 760px) { .cta__form { grid-template-columns: 1fr; } .cta__form .btn { width: 100%; } }
 
 /* ---------- footer ---------- */
