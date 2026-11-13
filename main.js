@@ -38,7 +38,7 @@
         .catch(function (err) {
           var v = function (n) { var el = form.elements[n]; return el ? el.value.trim() : ''; };
           var body = 'Hi AC Digital,\n\n' + v('message') + '\n\nName: ' + v('name') + '\nBusiness: ' + v('business') + '\nEmail: ' + v('email') + '\nPhone: ' + v('phone');
-          var mail = 'mailto:ac.digital03@gmail.com?subject=' + encodeURIComponent('Enquiry from the AC Digital website') + '&body=' + encodeURIComponent(body);
+          var mail = 'mailto:info@acdigital.je?subject=' + encodeURIComponent('Enquiry from the AC Digital website') + '&body=' + encodeURIComponent(body);
           status.classList.add('is-error');
           var why = err && err.message && err.message !== 'Failed' ? ' (' + String(err.message).replace(/[<>&"]/g, '') + ')' : '';
           status.innerHTML = 'Sorry, the form couldn’t send just now' + why + '. <a class="btn btn--navy" style="margin-top:12px" href="' + mail + '">Send by email instead</a><br>Or call <a href="tel:+447797759598">07797 759598</a>.';
